@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    nav a:hover {
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    section {
+      padding: 20px;
+    }
+    #skills img {
+      height: 40px;
+      width: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .project, .recommendation {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    #home-icon {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div id="name">Luis A Cendra</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Project Details</a>
+    <a href="#recommendations">Recommendations</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <img src="profile.jpg" alt="Profile Image" width="100">
+  <p>Hello! I’m a web developer with experience in HTML, CSS, and JavaScript.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div><img src="html.png" alt="HTML"> HTML</div>
+  <div><img src="css.png" alt="CSS"> CSS</div>
+  <div><img src="js.png" alt="JavaScript"> JavaScript</div>
+  <div><img src="react.png" alt="React"> React</div>
+  <div><img src="git.png" alt="Git"> Git</div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project">Project 1: Task Manager App</div>
+  <div class="project">Project 2: Weather Dashboard</div>
+  <div class="project">Project 3: Personal Blog</div>
+</section>
+
+<section id="recommendations">
+  <h2>Recommendations</h2>
+  <div class="recommendation">"Great to work with!" - Jane D.</div>
+  <div class="recommendation">"Delivers clean code and great UI." - John S.</div>
+  <div class="recommendation">"Creative and reliable." - Sam K.</div>
+  <input type="text" id="newRec" placeholder="Add a recommendation">
+  <button onclick="addRecommendation()">Submit</button>
+</section>
+
+<i id="home-icon" class="fas fa-home"></i>
+
+<script>
+  function addRecommendation() {
+    const text = document.getElementById('newRec').value;
+    if (text) {
+      const newDiv = document.createElement('div');
+      newDiv.className = 'recommendation';
+      newDiv.textContent = text;
+      document.getElementById('recommendations').appendChild(newDiv);
+      alert('Thank you for submitting a recommendation!');
+      document.getElementById('newRec').value = '';
+    }
+  }
+</script>
+
+</body>
+</html>
